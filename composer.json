@@ -1,0 +1,33 @@
+{
+  "name": "kairos/validation-extensions",
+  "description": "Validation extensions for symfony validator",
+  "type": "project",
+  "keywords": [
+    "validations",
+    "symfony",
+    "extension"
+  ],
+  "authors": [
+    {
+      "name":     "Alexandre Assouad",
+      "email":    "assouad@kairostag.com"
+    }
+  ],
+  "require": {
+    "symfony/validator": "*"
+  },
+  "require-dev": {
+    "phpspec/prophecy": "~1.0",
+    "phpunit/phpunit": "~4.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "ValidationExtensions\\": "src/ValidationExtensions"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
