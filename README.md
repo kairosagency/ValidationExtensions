@@ -1,2 +1,2 @@
 # ValidationExtensions
-Validations extensions for symfon validator component
+Validations extensions for symfony validator component
