@@ -19,15 +19,57 @@ class IsUUIDValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function testIsNotUUID()
     {
-        $badUUID = "AZERTYYUYIUYUYUYU";
-        $violations = $this->validator->validate($badUUID, new Assert\IsUUID());
+        $badUUID = "e80f5e74-1511-11e5-b89d-080027f";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID());
         $this->assertCount(1, $violations);
     }
 
     public function testIsUUID()
     {
-        $badUUID = "4EB4008C-0104-4A6C-A2B0-5BA4CC73742F";
-        $violations = $this->validator->validate($badUUID, new Assert\IsUUID());
+        $badUUID = "e80f5e74-1511-11e5-b89d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testIsNotUUID1()
+    {
+        $badUUID = "e80f5e74-1511-21e5-189d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID1());
         $this->assertCount(1, $violations);
+    }
+
+    public function testIsUUID1()
+    {
+        $badUUID = "e80f5e74-1511-11e5-b89d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID1());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testIsNotUUID3()
+    {
+        $badUUID = "e80f5e74-1511-21e5-189d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID3());
+        $this->assertCount(1, $violations);
+    }
+
+    public function testIsUUID3()
+    {
+        $badUUID = "e80f5e74-1511-31e5-b89d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID3());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testIsNotUUID4()
+    {
+        $badUUID = "e80f5e74-1511-21e5-189d-080027fca326";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID4());
+        $this->assertCount(1, $violations);
+    }
+
+    public function testIsUUID4()
+    {
+        $badUUID = "4172e6db-edd8-49e1-ad49-4f797f1cb526";
+        $violations = $this->validator->validate($badUUID, new Assert\UUID4());
+        $this->assertCount(0, $violations);
     }
 }
