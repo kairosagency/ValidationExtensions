@@ -11,7 +11,7 @@ namespace ValidationExtensions\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class IsUUIDValidator extends ConstraintValidator
+class UUIDValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint)
     {

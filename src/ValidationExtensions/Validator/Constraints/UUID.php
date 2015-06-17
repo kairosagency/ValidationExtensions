@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
  */
-class IsUUID extends Constraint
+class UUID extends Constraint
 {
     public $message = 'The string "%string%" is not a valid uuid.';
 }
