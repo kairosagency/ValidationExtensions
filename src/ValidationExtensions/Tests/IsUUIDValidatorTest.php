@@ -72,4 +72,32 @@ class IsUUIDValidatorTest extends \PHPUnit_Framework_TestCase
         $violations = $this->validator->validate($badUUID, new Assert\UUID4());
         $this->assertCount(0, $violations);
     }
+
+    public function testNullUUID4()
+    {
+        $badUUID = null;
+        $violations = $this->validator->validate($badUUID, new Assert\UUID4());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testNullUUID3()
+    {
+        $badUUID = null;
+        $violations = $this->validator->validate($badUUID, new Assert\UUID3());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testNullUUID1()
+    {
+        $badUUID = null;
+        $violations = $this->validator->validate($badUUID, new Assert\UUID1());
+        $this->assertCount(0, $violations);
+    }
+
+    public function testNullUUID()
+    {
+        $badUUID = null;
+        $violations = $this->validator->validate($badUUID, new Assert\UUID());
+        $this->assertCount(0, $violations);
+    }
 }
